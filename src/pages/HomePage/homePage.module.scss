@@ -1,0 +1,130 @@
+.homePageWrapper {
+    height: fit-content;
+
+    .homePage {
+        height: auto;
+        padding: 40px 0;
+        position: relative; 
+        overflow: hidden; 
+        z-index: 0; 
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%), url('../../images/heroBG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom-left-radius: 50rem; 
+            border-bottom-right-radius: 50rem; 
+            z-index: -1; 
+        }
+
+        .hero { 
+            h1 {
+                font-size: calc(11vw + 4px);
+                font-weight: 300;
+                text-align: center;
+                border: 1px solid white;
+                border-radius: 30px;
+                max-width: min-content;
+                margin: 0 auto 40px auto;
+            }
+            h3 {
+                font-size: calc(2vw + 4px);
+                font-weight: 600;
+                margin: 0 0 25px 0;
+                text-decoration: none;
+                text-align: center;
+            }
+            p {
+                font-size: calc(1.5vw + 4px);
+                font-weight: 400;
+                text-align: center;
+                max-width: 80%;
+                margin: 40px auto;
+            }
+        }
+        p {
+            text-align: right;
+            margin: 10% 10% 0 0;
+            font-size: calc(1.5vw + 4px);
+        }
+    }
+
+    .heroContactBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: calc(8vw + 4px);
+            font-weight: 300;
+            text-align: center;
+            margin: 7rem 0 0 0;
+        }
+
+        p {
+            font-size: calc(1.5vw + 3px);
+            font-weight: 400;
+            text-align: center;
+            margin: 3rem 0 7rem 0;
+            max-width: 40%;
+        }
+
+        button {
+            width: 150px;
+            height: 150px;
+            border: none;
+            border-radius: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 5rem 0; 
+            background: linear-gradient(45deg, #665DCD 0%, #5FA4E6 45%, #D2AB67 100%);
+
+            img {
+                width: 80px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .homePageWrapper {
+        .homePage {
+            .hero {
+                h1 {
+                    padding: 1rem;
+                }
+                p {
+                    margin: 20px auto;
+                }
+            }
+        }
+
+        .heroContactBox {
+            p {
+                font-size: calc(3.5vw + 3px);
+                max-width: 80%;
+            }
+
+            button {
+                width: 100px;
+                height: 100px;
+                border-radius: 40px;
+
+                img {
+                    width: 50px;
+                }
+            }
+        }
+    }
+}

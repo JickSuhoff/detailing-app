@@ -1,0 +1,197 @@
+@use "sass:list";
+
+.portfolioPage {
+    padding-top: 2rem;
+    position: relative;
+  
+    h2, h3 {
+        font-size: calc(6vw + 4px);
+        font-weight: 300;
+        margin: 0rem 0 2rem 0;
+        text-align: center;
+    }   
+    h3 {
+        font-size: calc(4vw + 4px);
+        font-weight: 300;
+        margin: 4rem 0 1rem 0;
+        text-align: center;
+    }
+    h4 {
+        font-size: calc(2vw + 4px);
+        font-weight: 300;
+        text-align: center;
+        margin: 4rem 0;
+    }  
+    h6 {
+        font-size: calc(1vw + 4px);
+        font-weight: 400;
+        text-align: center;
+        margin: 4rem 0;
+    }  
+    .servicesCaruousel {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      position: relative;
+      
+      .carouselTrack {
+        display: flex;
+        gap: 2px;
+        width: max-content; 
+        animation: scrollImages 100s linear infinite;
+      }  
+      img {
+        width: calc(65% - 20px);
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  
+    .servicesBoxInfo {
+      padding: 0 2rem 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+  
+      .serviceBox {
+        width: 20%;
+        height: 10rem;
+        border: 1px solid white;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        box-sizing: border-box;
+        margin: 0 1rem 2rem;
+        cursor: pointer;
+  
+        p {
+          font-size: calc(1.5vw + 4px);
+          font-weight: 400;
+        }
+      }
+  
+        @for $i from 1 through 8 {
+            .serviceBox#{$i} {
+                $image-url: list.nth((
+                    "leather.jpg",
+                    "kuzov1.jpg",
+                    "glass.png",
+                    "chrome.png",
+                    "tiers.jpeg",
+                    "tiers2.jpg",
+                    "torpeda.jpg",
+                    "carpets.png"
+                ), $i);
+        
+                background: linear-gradient(to right, #141619 20%, rgba(20, 22, 25, 0)),
+                            url("../../images/#{$image-url}");
+                background-repeat: no-repeat;
+                background-position: right;
+                background-size: cover;
+            }
+        }    
+    }
+    .drawer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 15, 15, 0.95); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+      
+        &.open {
+          opacity: 1;
+          visibility: visible;
+        }
+      
+        .drawerContent {
+            background-color: #222;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            padding: 3rem;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            url("../../images/wowHero.svg") no-repeat center center;
+            background-color: rgba(0, 0, 0, 0.9);
+            background-size: cover;
+          
+          .description {
+                font-size: calc(2vw + 4px);
+                font-weight: 400;
+                text-align: center;
+          }
+      
+          .closeBtn {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            opacity: 0.8;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+      
+            &:hover {
+              transform: scale(1.1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+  }
+  
+@keyframes scrollImages {
+    from { transform: translateX(0); }
+    to { transform: translateX(-250%); }
+}
+  
+@media (max-width: 1024px) {
+    .portfolioPage {
+        h4, h6 {
+            margin: 2rem 0;
+        }
+      .servicesBoxInfo .serviceBox {
+        width: 45%;
+        height: 12rem;
+      }
+    }
+}
+  
+@media (max-width: 768px) {
+    .portfolioPage {
+        h6 {
+            font-size: calc(2vw + 4px);
+        }
+        h2, h3 {
+            margin: 1rem 0;
+        }
+        h4, h6 {
+            margin: 0rem 0 1rem 0;
+        }
+        .servicesCaruousel {
+            height: 400px;
+        }
+        .servicesBoxInfo .serviceBox {
+        width: 100%;
+        height: 12rem;
+        padding-left: 2rem;
+  
+        p {
+          font-size: calc(3.5vw + 4px);
+        }
+      }
+    }
+}

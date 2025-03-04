@@ -1,0 +1,28 @@
+.rootLayout {
+    .MainContent {
+        width: 100%;
+        height: auto;
+        background-color: #141619 !important;
+        background: url(/src/images/background-blob1.png), url(/src/images/background-blob2.png), url(/src/images/background-blob3.png), url(/src/images/background-blob4.png), url(/src/images/background-blob5.png);
+        background-position: 11% -8%, 96% 6%, 35% 88%, 106% 75%, 81% -17%;
+        background-size: 27%, 16%, 23%, 53%, 30%;
+        background-repeat: no-repeat;
+        color: white;
+    }
+}
+@media (max-width: 1024px) {
+    .rootLayout {
+        .MainContent {
+            background-position: 11% -8%, 96% 6%, 35% 88%, 65% 88%, 15% 73%;
+            background-size: 33%, 53%, 32%, 140%, 130%;
+      }
+    }
+}
+@media (max-width: 768px) {
+    .rootLayout {
+        .MainContent {
+            background-position: 1% 2%, 119% 2%, 35% 88%, 65% 88%, 15% 21%;
+      }
+    }
+}
+

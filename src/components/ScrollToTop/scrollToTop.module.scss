@@ -1,0 +1,47 @@
+.scrollingButtonsWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10;
+
+    .callBtn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem 0 0 0; 
+        background: linear-gradient(45deg, #665DCD 0%, #5FA4E6 45%, #D2AB67 100%);
+    
+        img {
+            width: 30px;
+            height: auto;
+        }
+    }
+    .scrollingButton {
+        width: 50px;
+        height: 50px;
+        background-color: inherit;
+        border: 2px solid #D2AB67;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        img {
+          transform: rotate(180deg);
+        }
+    }
+}
+
+
+  
