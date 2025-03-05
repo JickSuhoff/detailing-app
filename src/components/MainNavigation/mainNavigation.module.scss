@@ -25,15 +25,10 @@
       flex-direction: column;
       justify-content: space-between;
       width: 42px;
-      height: 28px;
-      span {
-        display: block;
+      height: auto;
+      img {
         width: 42px;
-        height: 4px;
-        background-color: white;
-      }
-      span:nth-child(2) {
-        width: 21px;
+        height: auto;
       }
     }
   
@@ -168,19 +163,6 @@
       .mainLogo {
         width: 50px;
         height: 50px;
-      }
-      .burgerButton {
-        width: 35px;
-        height: 15px;
-
-        span {
-            width: auto;
-            height: 1px;
-        }
-        span:nth-child(2) {
-            width: 18px;
-            height: 1px;
-          }
       }
     }
 }

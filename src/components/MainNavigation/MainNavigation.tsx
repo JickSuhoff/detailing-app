@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import mainLogo from "../../images/main-logo-one.svg";
-import styles from "./mainNavigation.module.scss";
 import { NavLink } from "react-router-dom";
+import mainLogo from "../../images/main-logo-one.svg";
+import burgerIcon from "../../images/burger-btn.svg";
+import styles from "./mainNavigation.module.scss";
 
 const MainNavigation = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -79,9 +80,7 @@ const MainNavigation = () => {
       {isMobile ? (
         <>
           <button className={styles.burgerButton} onClick={toggleDrawer}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <img src={burgerIcon} alt="burgerIcon" />
           </button>
           <div
             ref={drawerRef}
