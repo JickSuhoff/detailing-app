@@ -14,6 +14,9 @@ const HomePage = () => {
         </div>
       </div>
       <p className={styles.addres}>м.КИЇВ, ФОРМЕТІВСЬКИЙ УЗВІЗ, 22</p>
+      <a href="tel:+380661819991" className={styles.phoneNum}>
+        +380661819991
+      </a>
       <div className={styles.heroContactBox}>
         <h3>Зацікавлені?</h3>
         <p>

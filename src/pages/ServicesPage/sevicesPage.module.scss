@@ -108,20 +108,22 @@
         padding: 5rem 1rem;
 
         .carousel {
+            height: fit-content;
             min-height: 700px;
             padding: 4rem 1rem 5rem 1rem;
             .boxWrapper {
                 flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                text-align: center;
+                align-items: unset;
+                text-align: unset;
                 div {
                     max-width: 100%;
                     h5 {
-                        font-size: calc(3vw + 4px);
+                        font-size: calc(4vw + 4px);
+                        text-align: center;
                     }
                     p {
-                        font-size: calc(3vw + 3px);
+                        font-size: calc(4vw + 3px);
                     }
                 }
             }

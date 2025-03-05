@@ -49,17 +49,20 @@
                 margin: 40px auto;
             }
         }
-        p {
-            text-align: right;
-            margin: 10% 10% 0 0;
-            font-size: calc(1.5vw + 4px);
-        }
     }
 
     .addres {
         text-align: right;
         margin: 5% 10% 0 0;
         font-size: calc(1.5vw + 4px);
+    }
+    .phoneNum {
+        display: block;
+        text-align: right;
+        margin: 2% 10% 0 0;
+        font-size: calc(1.5vw + 4px);
+        text-decoration: none;
+        color: white;
     }
 
     .heroContactBox {
@@ -110,13 +113,26 @@
                 h1 {
                     padding: 1rem;
                 }
+                h3 {
+                    font-size: calc(4vw + 4px);
+                }
                 p {
                     margin: 20px auto;
+                    font-size: calc(2.5vw + 4px);
                 }
             }
         }
-
+        .addres {
+            font-size: calc(2.5vw + 4px);
+        }
+        .phoneNum {
+            font-size: calc(2.5vw + 4px);
+            margin: 5% 10% 0 0;
+        }
         .heroContactBox {
+            h3 {
+                margin: 4rem 0 0 0;
+            }
             p {
                 font-size: calc(3.5vw + 3px);
                 max-width: 80%;
