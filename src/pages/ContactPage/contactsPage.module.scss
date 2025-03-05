@@ -79,9 +79,13 @@
             flex-direction: column;
             margin: 0 0 1rem 0;
 
-            .address, .phone, .instagramLink {
+            .address, .instagramLink {
                 margin: 0 0 2rem 0;
                 font-size: calc(2.5vw + 4px);
+            }
+            .phone {
+                margin: 0 0 2rem 0;
+                font-size: calc(4vw + 4px);
             }
         }
     }
