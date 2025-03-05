@@ -5,7 +5,9 @@ import styles from "./footer.module.scss";
 const Footer = () => {
   return (
     <footer>
-      <img src={mainLogo} alt="mainLogo" className={styles.mainLogo} />
+      <NavLink to={"/"} className={styles.mainLogo}>
+        <img src={mainLogo} alt="mainLogo" className={styles.mainLogo} />
+      </NavLink>
       <ul className={styles.list}>
         <li>
           <NavLink

@@ -12,8 +12,8 @@ const HomePage = () => {
           <p>ПЕРЕТЯЖКА КЕРМА, РУЧОК КПП</p>
           <p>ДЕТЕЙЛІНГ (МИЙКА, ХІМЧИСТКА, ПОЛІРУВАННЯ)</p>
         </div>
-        <p className={styles.addres}>м.КИЇВ, ФОРМЕТІВСЬКИЙ УЗВІЗ 22</p>
       </div>
+      <p className={styles.addres}>м.КИЇВ, ФОРМЕТІВСЬКИЙ УЗВІЗ, 22</p>
       <div className={styles.heroContactBox}>
         <h3>Зацікавлені?</h3>
         <p>

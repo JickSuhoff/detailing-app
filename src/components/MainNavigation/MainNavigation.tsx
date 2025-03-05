@@ -70,13 +70,15 @@ const MainNavigation = () => {
   ];
   return (
     <nav className={styles.navWrapperBox}>
-      <img
-        src={mainLogo}
-        alt="mainLogo"
-        width={100}
-        height={100}
-        className={styles.mainLogo}
-      />
+      <NavLink to={"/"} className={styles.mainLogo}>
+        <img
+          src={mainLogo}
+          alt="mainLogo"
+          width={100}
+          height={100}
+          className={styles.mainLogo}
+        />
+      </NavLink>
       {isMobile ? (
         <>
           <button className={styles.burgerButton} onClick={toggleDrawer}>

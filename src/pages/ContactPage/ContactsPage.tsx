@@ -7,7 +7,7 @@ const ContactsPage = () => {
     <div className={styles.contactsPage}>
       <h2>Ми знаходимось</h2>
       <div className={styles.infoBox}>
-        <p className={styles.address}>м.КИЇВ, ФОРМЕТІВСЬКИЙ УЗВІЗ 22</p>
+        <p className={styles.address}>м.КИЇВ, ФОРМЕТІВСЬКИЙ УЗВІЗ, 22</p>
         <a href="tel:+380661819991" className={styles.phone}>
           +380661819991
         </a>
