@@ -4,7 +4,27 @@
     padding-top: 2rem;
     position: relative;
   
-    h2, h3 {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4rem;
+
+        h2 {
+            font-size: calc(6vw + 4px);
+            font-weight: 300;
+            margin: 0;
+            text-align: center;
+        }
+        .active {
+            border: 1px solid white;
+            border-radius: 30px;
+            background-color: inherit;
+            padding: 0 2rem;
+        }
+    }
+    h3 {
         font-size: calc(6vw + 4px);
         font-weight: 300;
         margin: 0rem 0 2rem 0;
@@ -55,7 +75,7 @@
       justify-content: space-between;
       align-items: flex-start;
   
-      .serviceBox {
+      .detailingServiceBox {
         width: 20%;
         height: 10rem;
         border: 1px solid white;
@@ -72,9 +92,47 @@
           font-weight: 400;
         }
       }
+      .autoServiceBox {
+        width: 20%;
+        height: 10rem;
+        border: 1px solid white;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        box-sizing: border-box;
+        margin: 0 1rem 2rem;
+        cursor: pointer;
+  
+        p {
+          font-size: calc(1.5vw + 4px);
+          font-weight: 400;
+        }
+      }
+
+      @for $i from 1 through 10 {
+        .autoServiceBox#{$i} {
+            $image-url: list.nth((
+                "vihlopna-systema.jpg",
+                "pidviska2.jpg",
+                "servisne-obslugovuvannia.jpg",
+                "engine-service.jpg",
+                "car-cooling-system2.jpg",
+                "zcheplennia.jpg",
+                "fuel-system.jpg",
+                "car-breaks.jpg",
+                "transmission2.png",
+                "servisne-obslugovuvannia2.jpg",
+            ), $i);
+            background: linear-gradient(to right, #141619 20%, rgba(20, 22, 25, 0)), url("../../images/#{$image-url}");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
+        }
+      }
   
         @for $i from 1 through 8 {
-            .serviceBox#{$i} {
+            .detailingServiceBox#{$i} {
                 $image-url: list.nth((
                     "leather.jpg",
                     "kuzov1.jpg",
@@ -116,39 +174,69 @@
       
         .drawerContent {
             background-color: #222;
-            color: #fff;
             border-radius: 10px;
             text-align: center;
-            max-width: 400px;
-            width: 90%;
+            max-width: 50%;
+            width: 100%;
+            height: auto;
             padding: 3rem;
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-            url("../../images/wowHero.svg") no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/src/images/wowHero.svg) no-repeat center center;
             background-color: rgba(0, 0, 0, 0.9);
             background-size: cover;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: calc(1.5vw + 4px);
+            font-weight: 400;
+            color: white;
           
-          .description {
+            .description {
                 font-size: calc(2vw + 4px);
                 font-weight: 400;
                 text-align: center;
-          }
-      
-          .closeBtn {
-            width: 30px;
-            height: 30px;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            opacity: 0.8;
-            cursor: pointer;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-      
-            &:hover {
-              transform: scale(1.1);
-              opacity: 1;
             }
-          }
+
+            .infoBtnLink {
+                width: 30px;
+                height: 30px;
+                transition: transform 0.2s ease, opacity 0.2s ease;
+                opacity: 0.8;
+                cursor: pointer;
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                .infoBtn {
+                    width: 30px;
+                    height: 30px;
+                    transition: transform 0.2s ease, opacity 0.2s ease;
+                    opacity: 0.8;
+                    cursor: pointer;
+                    color: white;
+    
+                    &:hover {
+                        transform: scale(1.1);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .closeBtn {
+                width: 30px;
+                height: 30px;
+                transition: transform 0.2s ease, opacity 0.2s ease;
+                opacity: 0.8;
+                cursor: pointer;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+      
+                &:hover {
+                transform: scale(1.1);
+                opacity: 1;
+                }
+            }
         }
       }
   }
@@ -163,34 +251,57 @@
         h4, h6 {
             margin: 2rem 0;
         }
-      .servicesBoxInfo .serviceBox {
-        width: 45%;
-        height: 12rem;
+      .servicesBoxInfo {
+        .detailingServiceBox, .autoServiceBox {
+            width: 45%;
+            height: 12rem;
+        }
       }
     }
 }
   
 @media (max-width: 768px) {
     .portfolioPage {
+        header {
+            margin: 0 0 2rem 0;
+            padding: 0 2rem;
+            h2 {
+                font-size: calc(3vw + 4px);
+                &.active {
+                    padding: 0 1rem;
+                }
+            }
+        }
         h6 {
-            font-size: calc(2vw + 4px);
+            font-size: calc(2.5vw + 9px);
+            max-width: 80%;
+            margin: 0 auto 2rem auto;
         }
         h2, h3 {
             margin: 1rem 0;
         }
-        h4, h6 {
+        h4 {
+            font-size: calc(2.5vw + 9px);
             margin: 0rem 0 1rem 0;
         }
         .servicesCaruousel {
             height: 400px;
         }
-        .servicesBoxInfo .serviceBox {
-        width: 100%;
-        height: 12rem;
-        padding-left: 2rem;
-  
-        p {
-          font-size: calc(3.5vw + 4px);
+        .servicesBoxInfo {
+            .detailingServiceBox, .autoServiceBox {
+                width: 100%;
+                height: 12rem;
+                padding-left: 2rem;
+          
+                p {
+                  font-size: calc(3.5vw + 4px);
+                }
+            }
+        }
+      .drawer {
+        .drawerContent {
+            max-width: 80%;
+            font-size: calc(2.5vw + 4px);
         }
       }
     }
